@@ -1,6 +1,14 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
+    <button @click="carregainfo">clases</button>
+    <div v-for="(item,index) in resultados" :key="index">
+        <h3>{{item}}</h3>
+    </div>
+    <button @click="carregainfo2">healer</button>
+     <div v-for="(item,index) in date" :key="index">
+        <h3>{{item}}</h3>
+    </div>
     <p>
       For a guide and recipes on how to configure / customize this project,<br>
       check out the
@@ -29,18 +37,42 @@
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
     </ul>
   </div>
+
 </template>
 
 <script>
+import axios from "axios"
 export default {
   name: 'HelloWorld',
   props: {
     msg: String
+  },
+  data(){
+    return{
+      resultados:"",
+      date:""
+    }
+  },
+  methods:{
+    carregainfo(){ 
+      axios.get('https://www.dnd5eapi.co/api/classes')
+            .then(res=>{
+              this.resultados= res.data.results
+              console.log(this.resultados)
+          })
+    },
+    carregainfo2(){ 
+      axios.get('https://www.dnd5eapi.co/api/features')
+            .then(res=>{
+              this.date= res.data.results
+              console.log(this.resultados)
+          })
+    }
   }
+  
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 h3 {
   margin: 40px 0 0;
