@@ -1,41 +1,9 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <button @click="carregainfo">clases</button>
-    <div v-for="(item,index) in resultados" :key="index">
-        <h3>{{item}}</h3>
+  <div class="espaço1">
+    
+    <div class="Titulo">
+       Welcome to Your Adventures Dungeons and Dragons 5e Adventures
     </div>
-    <button @click="carregainfo2">healer</button>
-     <div v-for="(item,index) in date" :key="index">
-        <h3>{{item}}</h3>
-    </div>
-    <p>
-      For a guide and recipes on how to configure / customize this project,<br>
-      check out the
-      <a href="https://cli.vuejs.org" target="_blank" rel="noopener">vue-cli documentation</a>.
-    </p>
-    <h3>Installed CLI Plugins</h3>
-    <ul>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-babel" target="_blank" rel="noopener">babel</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-router" target="_blank" rel="noopener">router</a></li>
-      <li><a href="https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-vuex" target="_blank" rel="noopener">vuex</a></li>
-    </ul>
-    <h3>Essential Links</h3>
-    <ul>
-      <li><a href="https://vuejs.org" target="_blank" rel="noopener">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank" rel="noopener">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank" rel="noopener">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank" rel="noopener">Twitter</a></li>
-      <li><a href="https://news.vuejs.org" target="_blank" rel="noopener">News</a></li>
-    </ul>
-    <h3>Ecosystem</h3>
-    <ul>
-      <li><a href="https://router.vuejs.org" target="_blank" rel="noopener">vue-router</a></li>
-      <li><a href="https://vuex.vuejs.org" target="_blank" rel="noopener">vuex</a></li>
-      <li><a href="https://github.com/vuejs/vue-devtools#vue-devtools" target="_blank" rel="noopener">vue-devtools</a></li>
-      <li><a href="https://vue-loader.vuejs.org" target="_blank" rel="noopener">vue-loader</a></li>
-      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a></li>
-    </ul>
   </div>
 
 </template>
@@ -54,26 +22,26 @@ export default {
     }
   },
   methods:{
-    carregainfo(){ 
-      axios.get('https://www.dnd5eapi.co/api/classes')
-            .then(res=>{
-              this.resultados= res.data.results
-              console.log(this.resultados)
-          })
-    },
-    carregainfo2(){ 
-      axios.get('https://www.dnd5eapi.co/api/features')
-            .then(res=>{
-              this.date= res.data.results
-              console.log(this.resultados)
-          })
-    }
+  
   }
   
 }
 </script>
 
 <style scoped>
+  .espaço1{
+        display: flex;
+        flex-flow: column wrap;
+        justify-items: center;
+        font-size: 25px;
+        background:rgb(153, 204, 255);
+        padding: 20px;
+        margin: 10px;
+    }
+.Titulo{
+  color: rgb(0%,0%,0%);
+  font-size: 35px;
+}
 h3 {
   margin: 40px 0 0;
 }

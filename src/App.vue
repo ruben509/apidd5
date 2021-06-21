@@ -1,13 +1,32 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-      <router-link to="/Classes">Classes</router-link>
-    </div>
+    <appCard >
+      <div id="nav">
+        <router-link to="/">Home</router-link> |
+        <router-link to="/about">About</router-link>|
+        <router-link to="/Classes">Classes</router-link>|
+        <router-link to="/Races">Races</router-link>|
+        <router-link to="/Proficiencies">Proficiencies</router-link>|
+        <router-link to="/Montros">Montros</router-link>|
+      </div>
+    </appCard>
     <router-view/>
   </div>
 </template>
+
+<script>
+
+import HelloWorld from '@/components/HelloWorld.vue'
+import appCard from '@/components/app-card.vue'
+
+export default {
+  name: 'app',
+  components: {
+    HelloWorld,
+    appCard
+  }
+}
+</script>
 
 <style>
 #app {
